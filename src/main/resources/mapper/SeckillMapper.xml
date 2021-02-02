@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--建立com.sun.dao这个包,也就是对应mapper接口文件包一样的包名,这样符合Maven的约定,就是资源放置在Resource包下,Java包下则是放置java类文件,编译后最后还是会在同一个目录下.-->
+<mapper namespace="com.sun.dao.SeckillMapper">
+    <update id="reduceNumber">
+        UPDATE seckill
+        SET number = number - 1
+        WHERE seckill_id = #{seckillId}
+          AND start_time
+    <![CDATA[
+              <=
+              ]]>
+    #{killTime}
+          AND end_time >= #{killTime}
+          AND number > 0
+    </update>
+
+    <select id="queryById" resultType="com.sun.entity.Seckill">
+        select *
+        from seckill AS s
+        where s.seckill_id = #{seckillId}
+    </select>
+
+    <select id="queryAll" resultType="com.sun.entity.Seckill">
+        select *
+        from seckill AS s
+        order by create_time DESC LIMIT #{offset}, #{limit}
+    </select>
+</mapper>
