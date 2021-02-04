@@ -13,7 +13,7 @@ public interface SuccessKilledMapper {
      * @param userPhone 购买用户的手机号码
      * @return 成功插入就返回1，否则就返回0
      */
-    public int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
+    int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 
     /**
      * 根据秒杀商品的Id查询<code>SuccessKilled</code>
@@ -22,6 +22,6 @@ public interface SuccessKilledMapper {
      * @param userPhone 购买用户的手机号码
      * @return 秒杀商品的明细信息
      */
-    public SuccessKilled queryByIdWithSeckill(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
+    SuccessKilled queryByIdWithSeckill(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 
 }

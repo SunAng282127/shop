@@ -20,7 +20,7 @@ public class SeckillMapperTest {
 
     @Test
     public void reduceNumber() {
-        long seckillId = 1000;
+        long seckillId = 1004;
         LocalDateTime localDateTime = LocalDateTime.now();
         int i = seckillMapper.reduceNumber(seckillId, localDateTime);
         System.out.println(i);
@@ -28,7 +28,7 @@ public class SeckillMapperTest {
 
     @Test
     public void queryById() {
-        long seckillId = 1000;
+        long seckillId = 1004;
         Seckill seckill = seckillMapper.queryById(seckillId);
         System.out.println(seckill.toString());
     }

@@ -21,7 +21,7 @@ public class SuccessKilledMapperTest {
 
     @Test
     public void insertSuccessKilled() throws Exception {
-        long seckillId = 1000;
+        long seckillId = 1008;
         long userPhone = 13476191877L;
         int insertCount = successKilledMapper.insertSuccessKilled(seckillId, userPhone);
         System.out.println("insertCount=" + insertCount);
@@ -29,11 +29,11 @@ public class SuccessKilledMapperTest {
 
     @Test
     public void queryByIdWithSeckill() throws Exception {
-        long seckillId = 1000L;
+        long seckillId = 1008L;
         long userPhone = 13476191877L;
         SuccessKilled successKilled = successKilledMapper.queryByIdWithSeckill(seckillId, userPhone);
         System.out.println(successKilled);
-        System.out.println(successKilled.getSeckill());
+        System.out.println(successKilled.getSeckill().getCreateTime());
     }
 
 }
